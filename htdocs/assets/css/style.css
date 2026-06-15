@@ -1,0 +1,470 @@
+/* ========== ESTILOS GLOBALES - NUEVA PALETA TURQUESA ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #0f766e;
+    --primary: #14b8a6;
+    --primary-light: #5eead4;
+    --primary-bg: #ccfbf1;
+    --secondary: #f59e0b;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --danger: #dc2626;
+    --success: #10b981;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Header con nuevo color turquesa */
+header {
+    background: var(--primary-dark) !important;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: #0a5c55 !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Navegación */
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary-light) !important;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-light);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Botones principales */
+.btn-primary, .btn-login, .btn-registro {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-login:hover, .btn-registro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 118, 110, 0.4);
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background: var(--text-muted);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* Tarjetas */
+.card, .stat-card, .action-card, .card-articulo {
+    background: var(--white);
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover, .stat-card:hover, .action-card:hover, .card-articulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(15, 118, 110, 0.1);
+}
+
+.card h3, .card-title {
+    color: var(--primary-dark);
+}
+
+/* Títulos de sección */
+.about h2, .topics h2, .speakers h2, .call h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about h2::after, .topics h2::after, .speakers h2::after, .call h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    margin: 12px auto 0;
+    border-radius: 4px;
+}
+
+/* Stats section */
+.stats {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: white;
+}
+
+.stat h3 {
+    color: white !important;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.stat p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer */
+footer {
+    background: #0f172a !important;
+}
+
+footer h3 {
+    color: var(--primary-light);
+}
+
+/* Inputs modernos */
+.input-group-custom input,
+.input-group-custom select {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.2s;
+}
+
+.input-group-custom input:focus,
+.input-group-custom select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* Badges de estado */
+.status-recibido { background: #fef3c7; color: #d97706; }
+.status-en_revision { background: #dbeafe; color: #2563eb; }
+.status-aceptado { background: #d1fae5; color: #059669; }
+.status-rechazado { background: #fee2e2; color: #dc2626; }
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Modo oscuro (adaptado a la nueva paleta) */
+body.dark-mode {
+    background: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode header {
+    background: #0a5c55 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .action-card,
+body.dark-mode .card-articulo {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .card h3,
+body.dark-mode .card-title {
+    color: var(--primary-light) !important;
+}
+
+body.dark-mode footer {
+    background: #020617 !important;
+}
+
+body.dark-mode .stats {
+    background: linear-gradient(135deg, #0a5c55 0%, #0f766e 100%) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* ========== RESPONSIVE PARA MÓVIL (hasta 768px) ========== */
+@media (max-width: 768px) {
+    
+    /* Header - Logo y menú */
+    .main-header .container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .logo h2 {
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+    
+    .menu-btn {
+        display: block !important;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    
+    .nav-links {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 15px 0;
+        background: #0f766e;
+        border-radius: 16px;
+        margin-top: 10px;
+    }
+    
+    .nav-links.show {
+        display: flex !important;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    
+    /* Carrusel */
+    .carousel-item {
+        height: 350px !important;
+    }
+    
+    .carousel-item img {
+        height: 350px !important;
+        object-fit: cover;
+    }
+    
+    .carousel-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        right: 10px;
+        padding: 10px !important;
+        background: rgba(0,0,0,0.6) !important;
+        border-radius: 16px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.2rem !important;
+        margin-bottom: 5px;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.8rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-caption .btn {
+        font-size: 0.8rem !important;
+        padding: 6px 12px !important;
+    }
+    
+    /* Cuenta regresiva */
+    #countdown .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    #countdown .bg-primary {
+        padding: 12px !important;
+        margin: 5px;
+    }
+    
+    #countdown span.display-4 {
+        font-size: 1.8rem !important;
+    }
+    
+    #countdown .fs-5 {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Mapa */
+    #worldMap {
+        height: 280px !important;
+    }
+    
+    /* Ponentes */
+    .speaker-container, .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .col-md-4 {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto 20px;
+    }
+    
+    /* Tarjetas de estadísticas */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .stat-card {
+        padding: 12px !important;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Botones en general */
+    .btn {
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .btn-primary, .btn-login, .btn-registro {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Formularios */
+    .registro-card, .login-card {
+        padding: 1.5rem !important;
+        margin: 10px !important;
+    }
+    
+    .input-group-custom input,
+    .input-group-custom select {
+        padding: 12px 12px 12px 40px !important;
+        font-size: 16px !important; /* Evita zoom en iOS */
+    }
+    
+    /* Footer */
+    footer {
+        padding: 20px 15px !important;
+    }
+    
+    footer p {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Títulos de sección */
+    .about h2, .topics h2, .speakers h2, .call h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Panel de administración en móvil */
+    .actions-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+    
+    .table-responsive .btn-accion {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+}
+
+/* ========== TABLET (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .col-md-4 {
+        width: 50%;
+    }
+}
+
+/* ========== Corrección para el menú hamburguesa ========== */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block !important;
+    }
+    
+    .nav-links {
+        display: none !important;
+    }
+    
+    .nav-links.show {
+        display: flex !important;
+    }
+}
